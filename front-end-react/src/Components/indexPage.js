@@ -3,7 +3,7 @@ import LoadingHandler from './Handlers/loadingHandler'
 import ExerciseList from './Exercises/exerciseList'
 import ErrorHandler from './Handlers/errorHandler'
 
-export default function IndexPage({ axiosConnection }) {
+export default function IndexPage({ axiosConnection, setErrorMessage }) {
     const [exercises, setExercises] = useState([])
     const [error, setError] = useState({ show: false, status: null, message: null })
     const [loading, setLoading] = useState({ show: false, loadingMessage: '' })
@@ -49,6 +49,7 @@ export default function IndexPage({ axiosConnection }) {
             <ExerciseList
                 exercises={exercises} 
                 axiosConnection={axiosConnection} 
+                setError={setErrorMessage}
             />
         </>
     )

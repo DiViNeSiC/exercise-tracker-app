@@ -11,6 +11,8 @@ import EditExercise from './Components/Exercises/editExercise'
 import ErrorHandler from './Components/Handlers/errorHandler'
 import Default from './Components/default'
 
+import './Styles/Stylesheets/main.css'
+
 function App() {
   const [error, setError] = useState({ show: false, status: null, message: null })
   const token = localStorage.getItem('JWT_TOKEN')

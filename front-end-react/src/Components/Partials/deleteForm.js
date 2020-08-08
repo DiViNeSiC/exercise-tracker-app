@@ -31,7 +31,7 @@ export default function DeleteForm({ axiosConnection, url, method, setError }) {
 
     return (
         <form onSubmit={deleteMethod} >
-            <button type="submit" >{method}</button>
+            <button type="submit" >Yes</button>
         </form>
     )
 }

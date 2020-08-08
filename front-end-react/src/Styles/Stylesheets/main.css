@@ -1,0 +1,11 @@
+@import '../Shared/variables.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, var(--main-bg-color-left), var(--main-bg-color-right));
+}

@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import DeleteForm from './Partials/deleteForm'
+import DeleteModal from './Partials/deleteWarnModal'
 
-export default function Navbar({ setError, axiosConnection }) {    
+export default function Navbar({ setError, axiosConnection }) { 
+    const [showModal, setShowModal] = useState(false)
+    
+    function handleShowModal (toggleMethod) {
+        if (toggleMethod === 'open') 
+            return setShowModal(true)
+        if (toggleMethod === 'close')
+            return setShowModal(false)
+    }
+
     return (
         <>
             <div>
@@ -18,16 +27,20 @@ export default function Navbar({ setError, axiosConnection }) {
                             <Link to="/exercises/create">Create</Link>
                         </li>
                         <li>
-                            <DeleteForm 
-                                url={`logout`} 
-                                method={'Logout'}  
-                                axiosConnection={axiosConnection} 
-                                setError={setError}
-                            />
+                            <button onClick={() => handleShowModal('open')}>Logout</button>
                         </li>
                     </ul>
                 </div>            
             </div>
+            <DeleteModal 
+                show={showModal} 
+                message={'Are You Sure That ?'}
+                url={`logout`} 
+                method={'Logout'}  
+                axiosConnection={axiosConnection} 
+                setError={setError}
+                handleShowModal={handleShowModal}
+            />
         </>
     )
 }
