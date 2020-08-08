@@ -17,7 +17,7 @@ router.post('/', checkUserExist, async (req, res) => {
         })
         res.json({ message: `User Created! ${username}`})
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: `${err}` })
     }
 })
 

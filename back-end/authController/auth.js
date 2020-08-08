@@ -10,6 +10,6 @@ module.exports = async (req, res, next) => {
         req.payload = payload
         next()
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: `${err}` })
     }
 }

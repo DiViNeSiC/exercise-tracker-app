@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
         req.headers.authorization = token
         res.json({ user: user, token: token })
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: `${err}` })
     }
 })
 

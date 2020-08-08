@@ -29,3 +29,6 @@ export default function ErrorHandler({ setError, show, status, message }) {
         </>
     )
 }
+
+
+// Error: ValidationError: username: Path `username` (`dd`) is shorter than the minimum allowed length (3).

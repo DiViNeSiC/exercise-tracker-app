@@ -9,7 +9,7 @@ router.get('/', getLoggedUser, async (req, res) => {
         const exercises = await Exercise.find({ creatorUsername: username })
         res.json({ exercises: exercises })
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: err })
     }
 })
 
@@ -26,7 +26,7 @@ router.post('/create', getLoggedUser, async (req, res) => {
         await newExercise.save()
         res.json({ exercise: newExercise })
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: err })
     }
 })
 
@@ -35,7 +35,7 @@ router.get('/:id', getLoggedUser, isUserExercise, async (req, res) => {
         const exercise = await Exercise.findById(req.params.id)
         res.json({ exercise })
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: err })
     }
 })
 
@@ -50,7 +50,7 @@ router.put('/:id', getLoggedUser, isUserExercise, async (req, res) => {
         const exercise = await Exercise.findByIdAndUpdate(req.params.id, updateMethods)
         res.json({ exercise })
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: err })
     }
 })
 
@@ -59,7 +59,7 @@ router.delete('/:id', getLoggedUser, isUserExercise, async (req, res) => {
         const exercise = await Exercise.findByIdAndDelete(req.params.id)
         res.json({ message: `Exercise deleted: ${exercise.title}` })
     } catch (error) {
-        res.status(500).send({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: `${err}` })
     }
 })
 

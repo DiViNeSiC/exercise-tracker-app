@@ -15,7 +15,7 @@ router.delete('/delete-account', getLoggedUser, async (req, res) => {
         }
         await User.findByIdAndDelete(req.loggedUser.id)
     } catch (err) {
-        res.status(500).send({ errorMessage: `Error: ${err}`})
+        res.status(500).send({ errorMessage: `${err}` })
     }
 })
 
