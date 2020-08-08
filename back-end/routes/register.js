@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt')
 const checkUserExist = require('../middlewares/checkUserExist')
 const User = require('../models/user')
 
+router.get('/', (req, res) => {
+    res.status(403).send('Not logged in!')
+})
+
 router.post('/', checkUserExist, async (req, res) => {
     try {
         const { username, password } = req.body
@@ -12,9 +16,8 @@ router.post('/', checkUserExist, async (req, res) => {
             password: hashedPassword
         })
         res.json({ message: `User Created! ${username}`})
-        res.redirect('/login')
     } catch (err) {
-        res.json({ errorMessage: `Error: ${err}` })
+        res.status(500).send({ errorMessage: `Error: ${err}` })
     }
 })
 

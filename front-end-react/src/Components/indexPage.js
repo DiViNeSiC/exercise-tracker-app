@@ -1,41 +1,55 @@
 import React, { useState, useEffect } from 'react'
-import uuid from 'uuid/v4'
-import Exercise from './exercise'
+import LoadingHandler from './Handlers/loadingHandler'
+import ExerciseList from './Exercises/exerciseList'
+import ErrorHandler from './Handlers/errorHandler'
 
-const SAMPLE_DATA = [
-    {
-        id: 1,
-        title: 'Ride a bike',
-        duration: 60,
-        date: '2020-08-06T02:26:32.2548'
-    },
-    {
-        id: 2,
-        title: 'Walk in a park',
-        duration: 40,
-        date: '2020-08-08T12:26:32.4558'
-    },
-    {
-        id: 3,
-        title: 'Play Football',
-        duration: 90,
-        date: '2019-08-08T12:26:32.4558'
-    },
-]
+export default function IndexPage({ axiosConnection }) {
+    const [exercises, setExercises] = useState([])
+    const [error, setError] = useState({ show: false, status: null, message: null })
+    const [loading, setLoading] = useState({ show: false, loadingMessage: '' })
 
-export default function IndexPage() {
-    const [exercises, setState] = useState(SAMPLE_DATA)
+    async function getExercises() {
+        try {
+            setLoading({ show: true, loadingMessage: 'Loading...' })
+            const result = await axiosConnection.get('/exercises')
+            const exercises = result.data.exercises
+            setLoading({ show: false })
+            setExercises(exercises)
+        } catch (err) {
+            const errorMessage = err.response ? err.response : err
+            const errorNotAuth = err.response ? err.response.status : null
+            if (errorNotAuth === 401) {
+                return window.location = '/login'
+            }
+            setLoading({ show: false})
+            setError({ 
+                show: true,
+                status: 'danger',
+                message: errorMessage
+            })
+        }
+    }
+
+    useEffect(() => {
+        getExercises()
+    }, [])
+
     return (
-        <div className="exercises-list-container">
-            { exercises.map(exercise => {
-                return <Exercise 
-                            key={uuid()}
-                            title={exercise.title} 
-                            duration={exercise.duration}
-                            date={exercise.date} 
-                            id={exercise.id}
-                        />
-            })}
-        </div>
+        <>
+            <LoadingHandler 
+                show={loading.show}
+                message={loading.loadingMessage}
+            />
+            <ErrorHandler 
+                setError={setError}
+                show={error.show}
+                status={error.status}
+                message={error.message}
+            />
+            <ExerciseList
+                exercises={exercises} 
+                axiosConnection={axiosConnection} 
+            />
+        </>
     )
 }

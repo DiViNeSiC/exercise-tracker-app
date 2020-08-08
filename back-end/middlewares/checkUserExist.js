@@ -7,9 +7,11 @@ module.exports = async (req, res, next) => {
         const nameExist = allUsers.some(user => {
             return user.username.toLowerCase() === lowerCaseUsername
         })
-        if (nameExist) return res.json({ message: 'Username is already exist!' })
+        if (nameExist) 
+            return res.status(403).send({ errorMessage: 'Username is already exist!' })
+            
         next()
     } catch (err) {
-        res.redirect('/register')
+        res.status(500).send({ errorMessage: `Error: ${err}` })
     }
 }

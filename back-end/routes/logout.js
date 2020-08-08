@@ -1,10 +1,10 @@
 const router = require('express').Router()
 
 router.delete('/', (req, res) => {
-    req.session.token = null
+    req.headers.authorization = null
     req.payload = null
     
-    res.redirect('/login')
+    res.send('Logout')
 })
 
 module.exports = router
