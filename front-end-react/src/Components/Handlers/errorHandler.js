@@ -13,7 +13,7 @@ export default function ErrorHandler({ setError, show, status, message }) {
         if (show) {
             setTimeout(() => {
                 setError({ show: false })
-            }, 30000)
+            }, 7000)
         }
     }
 
