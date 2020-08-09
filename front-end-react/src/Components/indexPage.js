@@ -50,6 +50,8 @@ export default function IndexPage({ axiosConnection, setErrorMessage }) {
                 exercises={exercises} 
                 axiosConnection={axiosConnection} 
                 setError={setErrorMessage}
+                loading={loading}
+                error={error}
             />
         </>
     )

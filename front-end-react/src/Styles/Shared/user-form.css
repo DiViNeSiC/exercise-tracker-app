@@ -1,0 +1,77 @@
+.user-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-form-header {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.user-form-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+}
+
+.form-row {
+    margin: 10px;
+}
+
+.form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-field div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+}
+
+.form-field input {
+    padding: 3px 6px;
+    font-weight: 600;
+    font-size: .9rem;
+    width: 70%;
+    max-width: 300px;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+    background-color: var(--input-bg-color);
+    color: var(--input-txt-color);
+}
+
+.form-field input::placeholder {
+    color: var(--input-txt-color);
+    opacity: 1; 
+}
+
+.form-field input:-ms-input-placeholder {
+    color: var(--input-txt-color);
+}
+
+.form-field input::-ms-input-placeholder { 
+    color: var(--input-txt-color);
+}
+
+.form-field input:focus {
+    border: 1px solid #000;
+}

@@ -13,22 +13,15 @@ export default function ErrorHandler({ setError, show, status, message }) {
         if (show) {
             setTimeout(() => {
                 setError({ show: false })
-            }, 5000)
+            }, 30000)
         }
     }
 
     errShowTimeout()
     
     return (
-        <>
-            { show && 
-                <div className={`error-message ${status ? status : ''}`}>
-                    {errorMessage}
-                </div>
-            }
-        </>
+        <div className={`error-message ${status ? status : ''} ${show ? '' : 'hide'}`}>
+            {errorMessage}
+        </div>
     )
 }
-
-
-// Error: ValidationError: username: Path `username` (`dd`) is shorter than the minimum allowed length (3).

@@ -61,8 +61,8 @@ export default function CreateExercise({ setError, axiosConnection }) {
     }
 
     return (
-        <div>
-            <form onSubmit={createExercise}>
+        <div className="exercise-form-container">
+            <form className="exercise-form" onSubmit={createExercise}>
                 <ExerciseForm
                     titleInputOnChange={titleInputOnChange}
                     durationInputOnChange={durationInputOnChange}
@@ -71,8 +71,8 @@ export default function CreateExercise({ setError, axiosConnection }) {
                     durationInputValue={duration}
                     dateInputValue={date}
                 />
-                <div>
-                    <button type="submit" >Create</button>
+                <div className="exercise-form-row">
+                    <button className='btn create-btn' type="submit" >Create</button>
                 </div>
             </form>
         </div>

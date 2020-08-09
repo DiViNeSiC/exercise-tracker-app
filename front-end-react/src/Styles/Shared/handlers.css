@@ -1,0 +1,41 @@
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    right: 40px;
+    top: 75px;
+    width: 180px;
+    height: 43px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: .7s;
+    transform: translate(0%, 0%);
+    visibility: visible;
+    user-select: none;
+    z-index: 2;
+}
+
+.hide {
+    visibility: hidden;
+    transform: translate(0%, -100%);
+}
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--load-txt);
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
+    z-index: 2;
+}
+
+.danger {
+    background: var(--err-danger-bg);
+    border-bottom: 3px solid var(--err-danger-border);
+    color: var(--err-danger-txt);
+}

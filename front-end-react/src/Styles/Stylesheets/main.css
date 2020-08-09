@@ -1,4 +1,17 @@
 @import '../Shared/variables.css';
+@import '../Shared/navbar.css';
+@import '../Shared/buttons.css';
+@import '../Shared/index.css';
+@import '../Shared/user-form.css';
+@import '../Shared/exercise-form.css';
+@import '../Shared/modal.css';
+@import '../Shared/handlers.css';
+@import '../Shared/index\(phone\).css';
+
+:root {
+    font-size: 20px;
+    color: var(--dark-txt-color);
+}
 
 *,
 *::before,
@@ -7,5 +20,15 @@
 }
 
 body {
-    background: linear-gradient(to right, var(--main-bg-color-left), var(--main-bg-color-right));
+    background: var(--main-bg-color);
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+.inner-container { 
+    margin: 0 2rem;
 }

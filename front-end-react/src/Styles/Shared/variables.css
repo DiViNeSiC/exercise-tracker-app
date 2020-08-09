@@ -1,4 +1,24 @@
 :root {
-    --main-bg-color-left: #444;
-    --main-bg-color-right: #000;
+    --main-bg-color: #bdc3c7;
+    --dark-txt-color: #002884;
+    --contrast-txt-color: #cac6ff;
+    --nav-bg-color: #34495e;
+    --input-bg-color: #294380;
+    --input-txt-color: #b9bed4;
+    --log-btn-bg: #396394;
+    --log-btn-txt: #fff;
+    --exercise-bg-color-one: #8c90c4; 
+    --exercise-bg-color-two: #5452c9;
+    --exercise-txt-color-one: #002884; 
+    --exercise-txt-color-two: #cac6ff;
+    --exer-input-bg: #958ef3;
+    --exer-input-txt: #3d3bc7;
+    --exer-input-bg-dark: #3d3bc7;
+    --exer-input-txt-light: #fff;
+    --modal-bg: #cac6ff;
+    --modal-btn-bg: #1d64ac;
+    --err-danger-bg: none;
+    --err-danger-txt: #e62f2f;
+    --err-danger-border: rgba(155, 0, 0, .6);
+    --load-txt: #002884;
 }

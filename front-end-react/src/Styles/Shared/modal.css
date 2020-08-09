@@ -1,0 +1,40 @@
+.modal-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.modal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 70vw;
+    height: 200px;
+    max-width: 500px;
+    background-color: var(--modal-bg);
+    border-radius: .5rem;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .75);
+}
+
+.modal .message {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.modal .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+

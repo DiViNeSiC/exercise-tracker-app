@@ -34,14 +34,16 @@ function App() {
         status={error.status}
         message={error.message}
       />
-      <Switch>
-        <Route exact path='/exercises' component={() => <IndexPage axiosConnection={axiosConnection} setError={setError} />} />
-        <Route path='/register' component={() => <Register axiosConnection={axiosConnection} setError={setError} />} />
-        <Route path='/login' component={() => <Login axiosConnection={axiosConnection} setError={setError} />} />
-        <Route path='/exercises/create' component={() => <CreateExercise axiosConnection={axiosConnection} setError={setError} />} />
-        <Route path='/exercises/:id' component={() => <EditExercise axiosConnection={axiosConnection} setError={setError} />} />
-        <Route component={Default} />
-      </Switch>
+      <div className="inner-container">
+        <Switch>
+          <Route exact path='/exercises' component={() => <IndexPage axiosConnection={axiosConnection} setError={setError} />} />
+          <Route path='/register' component={() => <Register axiosConnection={axiosConnection} setError={setError} />} />
+          <Route path='/login' component={() => <Login axiosConnection={axiosConnection} setError={setError} />} />
+          <Route path='/exercises/create' component={() => <CreateExercise axiosConnection={axiosConnection} setError={setError} />} />
+          <Route path='/exercises/:id' component={() => <EditExercise axiosConnection={axiosConnection} setError={setError} />} />
+          <Route component={Default} />
+        </Switch>
+      </div>
     </div>
   );
 }

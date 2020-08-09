@@ -23,11 +23,11 @@ export default function Exercise({ exercise, axiosConnection, setError }) {
         <>
             <div className="exercise-item-container">
                 <div className="exercise-title">{title}</div>
-                <div className="exercise-duration">{duration}</div>
+                <div className="exercise-duration">"{duration}" Min</div>
                 <div className="exercise-date">{date.split('T')[0]}</div>
                 <div className="exercise-buttons">
-                    <Link to={`exercises/${_id}`}>Edit</Link>
-                    <button onClick={() => handleShowModal('open')}>Delete</button>
+                    <Link className="btn exercise-btn-edit" to={`exercises/${_id}`}>Edit</Link>
+                    <button className="btn exercise-btn-delete" onClick={() => handleShowModal('open')}>Delete</button>
                 </div>
             </div>
             <DeleteModal 

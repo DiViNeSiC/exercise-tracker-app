@@ -48,19 +48,19 @@ export default function Login({ setError, axiosConnection }) {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
+        <div className="user-form-container">
+            <h2 className="user-form-header">Login</h2>
+            <form className="user-form-main" onSubmit={handleLogin}>
                 <UserFormFields
                     usernameInputRef={usernameInputRef} 
                     passwordInputRef={passwordInputRef} 
                 />
-                <div>
-                    <button type="submit" >Login</button>
+                <div className="form-row">
+                    <button className="btn log-btn" type="submit" >Login</button>
                 </div>
-                <div>
+                <div className="form-row option-selector">
                     Don't Have An Account ? 
-                    <Link to="/register">Register</Link>
+                    <Link className="form-link" to="/register">Register</Link>
                 </div>
             </form>
         </div>

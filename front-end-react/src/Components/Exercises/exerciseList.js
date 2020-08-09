@@ -1,9 +1,14 @@
 import React from 'react'
 import Exercise from './exercise'
 
-export default function ExerciseList({ exercises, axiosConnection, setError }) {
+export default function ExerciseList({ exercises, axiosConnection, setError, error, loading }) {
     return (
-        <div>
+        <div className="exercise-container">
+            <div className="exercise-sample-container">
+                <div className="sample-title">Title</div>
+                <div className="sample-duration">Duration</div>
+                <div className="sample-date">Date</div>
+            </div>
             {exercises.length > 0 ? exercises.map(exercise => {
                 return <Exercise
                             key={exercise.id} 
@@ -11,7 +16,7 @@ export default function ExerciseList({ exercises, axiosConnection, setError }) {
                             setError={setError}
                             axiosConnection={axiosConnection} 
                         />
-            }) : <div>Your exercises are empty !</div> }
+            }) : <>{(!loading && !error) && <div className="empty-message">Your exercises are empty !</div>}</> }
         </div>
     )
 }

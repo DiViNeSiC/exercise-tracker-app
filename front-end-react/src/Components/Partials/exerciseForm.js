@@ -14,18 +14,20 @@ export default function ExerciseForm(props) {
     
     return (
         <>
-            <div>
+            <div className="exercise-form-row">
                 <input
                     type="text" 
                     onChange={titleInputOnChange} 
                     value={titleInputValue} 
+                    placeholder="Title"
                 />
             </div>
-            <div>
+            <div className="exercise-form-row column">
                 <input
-                    type="number" 
+                    type="number"
                     onChange={durationInputOnChange} 
                     value={durationInputValue}
+                    placeholder="Duration(min)"
                 />
                 <input 
                     type="date" 

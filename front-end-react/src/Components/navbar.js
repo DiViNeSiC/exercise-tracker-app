@@ -14,20 +14,20 @@ export default function Navbar({ setError, axiosConnection }) {
 
     return (
         <>
-            <div>
-                <div>
+            <div className="navbar-container">
+                <div className="navbar-header">
                     <Link to="/exercises">Exercise Tracker</Link>
                 </div>
-                <div>
-                    <ul>
-                        <li>
-                            <Link to="/exercises">Home</Link>
+                <div className="navbar-list-container">
+                    <ul className="navbar-list">
+                        <li className="navbar-item">
+                            <Link className="link" to="/exercises">Home</Link>
                         </li>
-                        <li>
-                            <Link to="/exercises/create">Create</Link>
+                        <li className="navbar-item">
+                            <Link className="link" to="/exercises/create">Create</Link>
                         </li>
-                        <li>
-                            <button onClick={() => handleShowModal('open')}>Logout</button>
+                        <li className="navbar-item">
+                            <button className="link" onClick={() => handleShowModal('open')}>Logout</button>
                         </li>
                     </ul>
                 </div>            

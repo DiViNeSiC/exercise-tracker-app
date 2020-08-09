@@ -41,19 +41,19 @@ export default function Register({ setError, axiosConnection }) {
     }
 
     return (
-        <div>
-            <h2>Register</h2>
-            <form onSubmit={handleRegister}>
+        <div className="user-form-container">
+            <h2 className="user-form-header">Register</h2>
+            <form className="user-form-main" onSubmit={handleRegister}>
                 <UserFormFields
                     usernameInputRef={usernameInputRef} 
                     passwordInputRef={passwordInputRef} 
                 />
-                <div>
-                    <button type="submit" >Register</button>
+                <div className="form-row">
+                    <button className="btn log-btn" type="submit" >Register</button>
                 </div>
-                <div>
+                <div className="form-row option-selector">
                     Already Have An Account ? 
-                    <Link to="/login">Login</Link>
+                    <Link className="form-link" to="/login">Login</Link>
                 </div>
             </form>
         </div>

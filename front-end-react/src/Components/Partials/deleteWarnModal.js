@@ -8,17 +8,17 @@ export default function deleteWarnModal({ show, message, axiosConnection, url, m
     return createPortal(
         <>
         { show && 
-            <div>
-                <div>
-                    <div>{message}</div>
-                    <div>
-                        <button onClick={() => handleShowModal('close')}>No</button>
+            <div className="modal-container">
+                <div className="modal">
+                    <div className="message">{message}</div>
+                    <div className="buttons">
                         <DeleteForm 
                             axiosConnection={axiosConnection}
                             url={url}
                             method={method}
                             setError={setError}
                         />
+                        <button className="btn no-btn" onClick={() => handleShowModal('close')}>No</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,46 @@
+@media all and (max-width: 610px) {
+    .exercise-sample-container {
+        display: none;
+    }
+    
+    .exercise-item-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 200px;
+    }
+
+    .exercise-title {
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .exercise-duration {
+        margin-top: -25px;
+        text-align: center;
+    }
+
+    .exercise-date {
+        margin-top: -25px;
+        text-align: center;
+    }
+
+    .exercise-buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .exercise-btn-edit {
+        width: 70px;
+        margin: 0;
+    }
+
+    .exercise-btn-delete {
+        width: 70px;
+        margin: 0;
+        margin-top: 10px;
+    }
+}
